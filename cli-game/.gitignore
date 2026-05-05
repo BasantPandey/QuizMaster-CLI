@@ -1,0 +1,22 @@
+# Node.js
+node_modules/
+dist/
+build/
+*.log
+.env*
+
+# Tests
+coverage/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.tmp
+
+# SpecKit
+specs/**/tasks.md.tmp
