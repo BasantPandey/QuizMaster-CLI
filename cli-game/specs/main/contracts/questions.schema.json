@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": { "type": "string" },
+      "text": { "type": "string" },
+      "options": {
+        "type": "array",
+        "items": { "type": "string" },
+        "minItems": 1
+      },
+      "answerIndex": { "type": "integer", "minimum": 0 }
+    },
+    "required": ["id", "text", "options", "answerIndex"]
+  }
+}
