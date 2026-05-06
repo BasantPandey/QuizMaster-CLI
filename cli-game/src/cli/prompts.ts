@@ -23,6 +23,11 @@ export async function runQuizLoop(session: QuizSession): Promise<QuizSession> {
       process.exit(0);
     }
 
+    const s = p.spinner();
+    s.start('Checking your answer...');
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    s.stop('Result:');
+
     currentSession = processAnswer(currentSession, answer as number);
     
     const lastAnswer = currentSession.answers[currentSession.answers.length - 1];

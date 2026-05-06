@@ -1,11 +1,19 @@
 import { QuizSession } from '../core/types.js';
+import { generateResultsChart } from './chart.js';
 
 export function formatResults(session: QuizSession): string {
   const total = session.questions.length;
   const score = session.score;
   const percentage = Math.round((score / total) * 100);
 
+  const chart = generateResultsChart({
+    correct: score,
+    incorrect: total - score,
+    total: total,
+  });
+
   let summary = `Final Score: ${score}/${total} (${percentage}%)\n\n`;
+  summary += chart + '\n\n';
   summary += 'Detailed Breakdown:\n';
 
   session.questions.forEach((q, idx) => {
