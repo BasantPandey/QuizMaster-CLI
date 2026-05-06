@@ -1,5 +1,5 @@
 <!-- SPECKIT START -->
 For additional context about technologies to be used, project structure,
 shell commands, and other important information, read the current plan:
-[specs/main/plan.md](specs/main/plan.md)
+[specs/003-multi-answer-questions/plan.md](specs/003-multi-answer-questions/plan.md)
 <!-- SPECKIT END -->

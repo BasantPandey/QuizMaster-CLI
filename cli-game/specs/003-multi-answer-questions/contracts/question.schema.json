@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Question",
+  "type": "object",
+  "properties": {
+    "text": { "type": "string" },
+    "options": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 2
+    },
+    "type": {
+      "type": "string",
+      "enum": ["single", "multiple"]
+    },
+    "answerIndex": { "type": "integer" },
+    "correctIndices": {
+      "type": "array",
+      "items": { "type": "integer" }
+    },
+    "scoringMode": {
+      "type": "string",
+      "enum": ["all-or-nothing", "proportional", "strict"]
+    }
+  },
+  "required": ["text", "options"],
+  "if": {
+    "properties": { "type": { "const": "multiple" } }
+  },
+  "then": {
+    "required": ["correctIndices"]
+  },
+  "else": {
+    "required": ["answerIndex"]
+  }
+}
