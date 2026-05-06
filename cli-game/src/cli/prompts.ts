@@ -1,6 +1,7 @@
 import * as p from '@clack/prompts';
 import { QuizSession } from '../core/types.js';
 import { processAnswer } from '../core/engine.js';
+import { playVictoryAnimation, playEncouragementAnimation } from './animations.js';
 
 export async function runQuizLoop(session: QuizSession): Promise<QuizSession> {
   let currentSession = session;
@@ -36,6 +37,14 @@ export async function runQuizLoop(session: QuizSession): Promise<QuizSession> {
     } else {
       p.log.error(`Incorrect. The correct answer was: ${question.options[question.answerIndex]}`);
     }
+  }
+
+  // Animation based on score
+  const isPerfect = currentSession.score === currentSession.questions.length;
+  if (isPerfect) {
+    await playVictoryAnimation();
+  } else {
+    await playEncouragementAnimation();
   }
 
   return currentSession;

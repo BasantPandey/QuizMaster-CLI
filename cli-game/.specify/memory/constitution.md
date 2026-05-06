@@ -1,11 +1,9 @@
 <!--
 SYNC IMPACT REPORT
-- Version change: 1.1.0 -> 1.2.0 (Minor: Tailored for Q&A/Quiz domain)
-- Modified principles:
-  - Project Renamed: cli-game -> QuizMaster CLI
-  - V. Extensibility & Modding -> V. Data-Driven Q&A Content
+- Version change: 1.2.0 -> 1.3.0 (Minor: Added Principle VIII for visual polish)
+- Modified principles: N/A
 - Added sections:
-  - VII. Interactive Feedback & Scoring (New principle)
+  - VIII. Visual Polish & Aesthetics (New principle)
 - Removed sections: N/A
 - Templates requiring updates:
   - .specify/templates/plan-template.md: ✅ (Verified)
@@ -39,6 +37,9 @@ Build small, focused tools. If the project grows to include question management 
 ### VII. Interactive Feedback & Scoring
 The system MUST provide immediate, clear feedback after each answer and a comprehensive summary of results at the end. Scoring logic must be deterministic and transparent. Rationale: Essential for the core "Quiz" value proposition.
 
+### VIII. Visual Polish & Aesthetics
+The application SHOULD include visual enhancements (e.g., animations, ASCII art, party poppers, or color highlights) to celebrate successes or provide feedback on failures. Rationale: Improves user engagement and provides a more delightful and memorable experience.
+
 ## Technical Constraints
 
 - **Language**: TypeScript MUST be used with `strict` mode enabled.
@@ -59,4 +60,4 @@ The system MUST provide immediate, clear feedback after each answer and a compre
 - Amendments require documentation, approval from the lead developer, and a version bump.
 - Every new feature MUST include a constitution check in its implementation plan.
 
-**Version**: 1.2.0 | **Ratified**: 2026-05-05 | **Last Amended**: 2026-05-05
+**Version**: 1.3.0 | **Ratified**: 2026-05-05 | **Last Amended**: 2026-05-06
